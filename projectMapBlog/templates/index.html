@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>맛집 추천 서비스 Map Blog 입니다.</title>
+</head>
+<body>
+	<div id="map" style="width:1000px;height:800px;"></div>
+	<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=8d9fa66b5a57ed1782dfb50131b06dfd"></script>
+	<script>
+		var container = document.getElementById('map');
+		var options = {
+			center: new daum.maps.LatLng(37.556767, 126.936609),
+			level: 3
+		};
+		var map = new daum.maps.Map(container, options);
+
+        var recommend_Cafeteria = new daum.maps.LatLng({{x}}, {{y}});
+
+        var marker_Cafeteria = new daum.maps.Marker(
+            {
+                position : recommend_Cafeteria
+            }
+        )
+        
+        marker_Cafeteria.setMap(map)
+	</script>
+	<br>
+	<br>
+	{{cafeteria}}
+	<form>
+	<br><br>
+		<input type="button" value="다른 맛집 알아보기" onClick="window.location.reload()">
+	</form>
+</body>
+</html>

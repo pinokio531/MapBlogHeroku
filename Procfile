@@ -1,0 +1,1 @@
+web: gunicorn mapblog.wsgi --log-file -
